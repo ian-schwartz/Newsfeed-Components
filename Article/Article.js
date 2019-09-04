@@ -112,3 +112,39 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const articlesContainer = document.querySelector('.articles');
+
+function createComponent(title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const articleDiv = document.createElement('div');
+  const titleHeading = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const button = document.createElement('span');
+
+  articleDiv.classList.add('article');
+  articleDate.classList.add('date');
+  button.classList.add('expandButton');
+
+  articleDiv.appendChild(titleHeading);
+  articleDiv.appendChild(articleDate);
+  articleDiv.appendChild(p1);
+  articleDiv.appendChild(p2);
+  articleDiv.appendChild(p3);
+  articleDiv.appendChild(button);
+
+  button.addEventListener('click', (e) => {
+    articleDiv.classList.toggle('article-open');
+  });
+
+  return articleDiv
+}
+
+  data.forEach((article) => {
+    articlesContainer.appendChild(createComponent(article.title, article.date, article.firstParagraph, article.secondParagraph, article.thirdParagraph));
+  });
+
+
+
