@@ -37,17 +37,17 @@ const menuContainer = document.querySelector('.header');
 
 function createMenuComponent(array) {
   const menuDiv = document.createElement('div');
-  const list = document.createElement('ul');
+  const uList = document.createElement('ul');
   
-
   menuDiv.classList.add('menu');
 
-  menu.appendChild(ul);
+  menuDiv.appendChild(uList);
 
+  
   array.forEach((item) => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    ul.appendChild(li);
+    const listItem = document.createElement('li');
+    uList.appendChild(listItem);
+    listItem.textContent = item;
   });
 
   const menuButton = document.querySelector('.menu-button');
@@ -57,3 +57,5 @@ function createMenuComponent(array) {
   });
   return menuDiv
 }
+
+menuContainer.prepend(createMenuComponent(menuItems));
