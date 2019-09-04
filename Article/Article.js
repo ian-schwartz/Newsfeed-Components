@@ -128,6 +128,12 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
   articleDate.classList.add('date');
   button.classList.add('expandButton');
 
+  titleHeading.textContent = title;
+  articleDate.textContent = date;
+  p1.textContent = firstParagraph;
+  p2.textContent = secondParagraph;
+  p3.textContent = thirdParagraph;
+
   articleDiv.appendChild(titleHeading);
   articleDiv.appendChild(articleDate);
   articleDiv.appendChild(p1);
