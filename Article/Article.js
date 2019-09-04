@@ -133,6 +133,7 @@ function createComponent(title, date, firstParagraph, secondParagraph, thirdPara
   p1.textContent = firstParagraph;
   p2.textContent = secondParagraph;
   p3.textContent = thirdParagraph;
+  button.textContent = 'Click Here';
 
   articleDiv.appendChild(titleHeading);
   articleDiv.appendChild(articleDate);
